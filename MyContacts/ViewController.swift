@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fullname: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var birthdate: UITextField!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var btnCall: UIButton!
@@ -60,6 +61,7 @@ class ViewController: UIViewController {
             contactdb.setValue(fullname.text, forKey: "fullname")
             contactdb.setValue(email.text, forKey: "email")
             contactdb.setValue(phone.text, forKey: "phone")
+            contactdb.setValue(birthdate.text, forKey: "birthdate")
             
         }
         else
@@ -122,6 +124,7 @@ class ViewController: UIViewController {
             fullname.text = contactdb.value(forKey: "fullname") as? String
             email.text = contactdb.value(forKey: "email") as? String
             phone.text = contactdb.value(forKey: "phone") as? String
+            birthdate.text = contactdb.value(forKey: "birthdate") as? String
             btnSave.setTitle("Update", for: UIControlState())
             btnCall.isHidden = false
             btnEdit.isHidden = false
@@ -175,6 +178,7 @@ class ViewController: UIViewController {
         fullname.endEditing(true)
         email.endEditing(true)
         phone.endEditing(true)
+        birthdate.endEditing(true)
         
     }
     //**End Copy**
